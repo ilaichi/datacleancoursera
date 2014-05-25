@@ -91,7 +91,7 @@ alldata <- alldata[order(alldata$SubjectId,alldata$Activity),]
 # create descriptive row names - unique ID + subject ID + activity
 row.names(alldata) <- paste(seq_along(alldata$Activity),"-",alldata$SubjectId, "-", alldata$Activity)
 # save tidy data set 1
-write.csv(alldata, "tidydata1.csv")
+write.csv(alldata, "tidydata1.txt")
 
 ##############################################
 ## CREATE TIDY DATA SET 2
@@ -120,7 +120,7 @@ avgdata <- aggregate(alldata[,3:563], alldata[,1:2], FUN=mean)
 # create descriptive row names - unique ID + subject ID + activity
 row.names(avgdata) <- paste(seq_along(avgdata$Activity),"-",avgdata$SubjectId, "-", avgdata$Activity)
 # save tidy data set 2
-write.csv(avgdata, "tidydata2.csv")
+write.csv(avgdata, "tidydata2.txt")
 
 
 ##############################################
